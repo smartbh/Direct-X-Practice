@@ -6,3 +6,5 @@
 #include "Block.h"
 
 #include "Sonic.h"
+#include "Scene01.h"
+#include "Scene02.h"
