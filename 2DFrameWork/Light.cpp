@@ -44,8 +44,8 @@ void Light::Set()
 void Light::SetLightPos(Vector2 WPos)
 {
     WPos -= CAM->position;
-    WPos = Vector2(app.GetHalfWidth(), app.GetHalfHeight() * -1);
+    WPos.y *= -1.0f;
+    WPos += Vector2(app.GetHalfWidth(), app.GetHalfHeight());
 
     light.screenPos = WPos;
-
 }
