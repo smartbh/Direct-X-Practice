@@ -2,12 +2,16 @@
 #define FMAX 8
 #define RMAX 3
 
-struct FLOOR
+namespace F1
 {
-	ObImage* img;
-	ObRect* col;
-	bool	isVisible;
+	struct FLOOR
+	{
+		ObImage* img;
+		ObRect* col;
+		bool	isVisible;
+	};
 };
+
 class Scene01 : public Scene
 {
 private:
@@ -16,7 +20,7 @@ private:
 
 	Sonic* sonic;
 
-	FLOOR		floor[FMAX];
+	F1::FLOOR		floor[FMAX];
 	ObImage*	rock[RMAX];
 
 	ObImage* bg; //¹è°æ

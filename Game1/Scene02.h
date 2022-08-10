@@ -19,7 +19,7 @@ private:
 
 	Sonic* sonic;
 
-	FLOOR		floor[FMAX];
+	F2::FLOOR		floor[FMAX];
 	ObImage* rock[RMAX];
 
 	ObImage* bg; //¹è°æ
