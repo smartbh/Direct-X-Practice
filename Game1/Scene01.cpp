@@ -6,6 +6,7 @@ void Scene01::Init()
 	bg = new ObImage(L"Oven1.png");
 	bg->scale = Vector2(569.0f, 320.0f) * 2.5f;
 	bg->space = SPACE::SCREEN;
+	bg->color = Color(0.0f, 0.0f, 1.0f, 1.0f);
 
 	bg2 = new ObImage(L"Oven2.png");
 	bg2->scale = Vector2(862.0f, 320.0f) * 2.5f;
@@ -38,8 +39,6 @@ void Scene01::Init()
 		rock[i]->collider = COLLIDER::CIRCLE;
 	}
 
-	sonic = new Sonic();
-
 	ui = new ObRect();
 	ui->SetWorldPos(Vector2(-app.GetHalfWidth(), app.GetHalfHeight()));
 	ui->scale = Vector2(200.0f, 200.0f);
@@ -61,8 +60,6 @@ void Scene01::Release()
 
 void Scene01::Update()
 {
-	LIGHT->SetLightPos(sonic->col->GetWorldPos());
-
 	if (ImGui::SliderFloat("AppSoundScale", &app.soundScale, 0.0f, 1.0f))
 	{
 		SOUND->SetMasterVolume();

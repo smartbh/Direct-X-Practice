@@ -37,8 +37,6 @@ void Scene02::Init()
 		rock[i]->collider = COLLIDER::CIRCLE;
 	}
 
-	sonic = new Sonic();
-
 	ui = new ObRect();
 	ui->SetWorldPos(Vector2(-app.GetHalfWidth(), app.GetHalfHeight()));
 	ui->scale = Vector2(200.0f, 200.0f);
@@ -60,8 +58,6 @@ void Scene02::Release()
 
 void Scene02::Update()
 {
-	LIGHT->SetLightPos(sonic->col->GetWorldPos());
-
 	if (ImGui::SliderFloat("AppSoundScale", &app.soundScale, 0.0f, 1.0f))
 	{
 		SOUND->SetMasterVolume();
@@ -230,7 +226,6 @@ void Scene02::Render()
 	{
 		rock[i]->Render();
 	}
-
 }
 
 void Scene02::ResizeScreen()

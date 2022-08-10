@@ -17,7 +17,7 @@ private:
 	ObImage* test;
 	float		testScale;
 
-	Sonic* sonic;
+	
 
 	F2::FLOOR		floor[FMAX];
 	ObImage* rock[RMAX];
@@ -32,6 +32,8 @@ private:
 
 
 public:
+	Sonic* sonic;
+
 	virtual void Init() override;
 	virtual void Release() override; //«ÿ¡¶
 	virtual void Update() override;

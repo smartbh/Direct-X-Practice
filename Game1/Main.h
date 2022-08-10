@@ -1,33 +1,10 @@
 #pragma once
-#define FMAX 8
-#define RMAX 3
 
-struct FLOOR
-{
-	ObImage* img;
-	ObRect* col;
-	bool	isVisible;
-};
 
 class Main : public Scene
 {
 private:
-	ObImage*	test;
-	float		testScale;
-
-	Sonic*		sonic;
-
-	FLOOR		floor[FMAX];
-	ObImage*	rock[RMAX];
-
-	ObImage*	bg; //¹è°æ
-	ObImage*	bg2; //ºÒ
-
-	ObRect* ui;
-
-	float bgmScale;
-	float gunScale;
-
+	Sonic* pl;
 
 public:
 	virtual void Init() override;
