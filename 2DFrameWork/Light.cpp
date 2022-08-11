@@ -7,7 +7,7 @@ Light::Light()
     //조명 반지름
     light.radius = 300.0f;
     //조명색
-    light.lightColor = Color(0.8f, 0.5f, 0.5f, 0.5f); // 안에 섞을 색
+    light.lightColor = Color(0.5f, 0.5f, 0.5f, 0.5f); // 안에 섞을 색
     //경계밖 색
     light.outColor = Color(0.0f, 0.0f, 0.0f, 0.5f); //밖에 섞을 색
     light.select = 0;

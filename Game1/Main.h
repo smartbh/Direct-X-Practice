@@ -14,6 +14,9 @@ private:
 	//float	getTickTime2;
 
 	ObImage*	player;
+	ObImage*	rolling;
+	float		getTickTime;
+	Vector2		rollDir;
 
 public:
 	virtual void Init() override;
