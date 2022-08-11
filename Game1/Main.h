@@ -4,14 +4,16 @@
 class Main : public Scene
 {
 private:
-	Sonic* pl;
+	//Sonic* pl;
 
-	float trailTimer = 0.0f;
-	bool	sceneChange = false;
-	bool	trigger;
-	bool    fadeOut;
-	float	getTickTime;
-	float	getTickTime2;
+	//float trailTimer = 0.0f;
+	//bool	sceneChange = false;
+	//bool	trigger;
+	//bool    fadeOut;
+	//float	getTickTime;
+	//float	getTickTime2;
+
+	ObImage*	player;
 
 public:
 	virtual void Init() override;

@@ -3,51 +3,52 @@
 
 void Main::Init()
 {
-	pl = new Sonic();
+	player = new ObImage(L"Walk.png");
+	//pl = new Sonic();
 
-	//익명 스코프
-	{
-		Scene01* temp = new Scene01();
-		temp->sonic = pl;
-		SCENE->AddScene("Scene01", temp);
-	}
+	////익명 스코프
+	//{
+	//	Scene01* temp = new Scene01();
+	//	temp->sonic = pl;
+	//	SCENE->AddScene("Scene01", temp);
+	//}
 
-	{
-		Scene02* temp = new Scene02();
-		temp->sonic = pl;
-		SCENE->AddScene("Scene02", temp);
-	}
+	//{
+	//	Scene02* temp = new Scene02();
+	//	temp->sonic = pl;
+	//	SCENE->AddScene("Scene02", temp);
+	//}
 
-	SCENE->ChangeScene("Scene01");
-	LIGHT->light.radius = 4000.0f;
+	//SCENE->ChangeScene("Scene01");
+	//LIGHT->light.radius = 4000.0f;
 
-	getTickTime = 5.0f;
-	sceneChange = false;
-	trigger = false;
+	//getTickTime = 5.0f;
+	//sceneChange = false;
+	//trigger = false;
 }
 
 void Main::Release()
 {
-	SafeDelete(pl);
+
 }
 
 void Main::Update()
 {
 	
 
-	LIGHT->SetLightPos(pl->col->GetWorldPivot());
+	//LIGHT->SetLightPos(pl->col->GetWorldPivot());
 
-	SCENE->Update();
+	//SCENE->Update();
 }
 
 void Main::LateUpdate()
 {
-	SCENE->LateUpdate();
+	//SCENE->LateUpdate();
 }
 
 void Main::Render()
 {
-	SCENE->Render();
+	//SCENE->Render();
 }
 
 void Main::ResizeScreen()
