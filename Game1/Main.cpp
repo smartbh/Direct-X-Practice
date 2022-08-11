@@ -20,6 +20,10 @@ void Main::Init()
 
 	SCENE->ChangeScene("Scene01");
 	LIGHT->light.radius = 4000.0f;
+
+	getTickTime = 5.0f;
+	sceneChange = false;
+	trigger = false;
 }
 
 void Main::Release()
@@ -29,21 +33,75 @@ void Main::Release()
 
 void Main::Update()
 {
-	if (ImGui::Button("1"))
+	if (INPUT->KeyDown('Z'))
 	{
-
-
-		SCENE->ChangeScene("Scene01");
-		cout << "Scene change" << endl;
-
-		LIGHT->light.radius = 4000.0f;
+		sceneChange = true;
+		getTickTime = 2.0f;
+		trigger = true;
 	}
-	if (ImGui::Button("2"))
+
+	if (trigger)
 	{
+		if (sceneChange)
+		{
+			getTickTime -= DELTA;
+			if (getTickTime > 0.0f)
+			{
+				if (fadeOut == false)
+				{
+					if(LIGHT->light.radius > 0)
+						LIGHT->light.radius -= 2200.0f * DELTA;
 
-		SCENE->ChangeScene("Scene02");
+				}
+				else
+				{
+					if (LIGHT->light.radius < 4000)
+						LIGHT->light.radius += 2200.0f * DELTA;
+				}
+			}
+			else
+			{
+				cout << LIGHT->light.radius << endl;
+				SCENE->ChangeScene("Scene02");
+				trigger = false;
+				sceneChange = false;
+				if(LIGHT->light.radius > 0)
+					fadeOut = false;
+				else
+					fadeOut = true;
+			}
+		}
+		else
+		{
+			getTickTime -= DELTA;
+			if (getTickTime > 0.0f)
+			{
+				if (fadeOut == false)
+				{
+					if (LIGHT->light.radius > 0)
+						LIGHT->light.radius -= 2000.0f * DELTA;
 
+				}
+				else
+				{
+					if (LIGHT->light.radius < 4000)
+						LIGHT->light.radius += 2000.0f * DELTA;
+				}
+			}
+			else
+			{
+				cout << LIGHT->light.radius << endl;
+				SCENE->ChangeScene("Scene01");
+				trigger = false;
+				sceneChange = true;
+				if (LIGHT->light.radius > 0)
+					fadeOut = false;
+				else
+					fadeOut = true;
+			}
+		}
 	}
+	
 
 	LIGHT->SetLightPos(pl->col->GetWorldPivot());
 

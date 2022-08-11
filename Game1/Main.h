@@ -6,6 +6,13 @@ class Main : public Scene
 private:
 	Sonic* pl;
 
+	float trailTimer = 0.0f;
+	bool	sceneChange = false;
+	bool	trigger;
+	bool    fadeOut;
+	float	getTickTime;
+	float	getTickTime2;
+
 public:
 	virtual void Init() override;
 	virtual void Release() override; //«ÿ¡¶
