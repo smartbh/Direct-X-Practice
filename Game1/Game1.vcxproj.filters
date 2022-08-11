@@ -12,8 +12,12 @@
     <ClInclude Include="Sonic.h">
       <Filter>GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="Scene01.h" />
-    <ClInclude Include="Scene02.h" />
+    <ClInclude Include="Scene01.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene02.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
@@ -26,8 +30,12 @@
     <ClCompile Include="Sonic.cpp">
       <Filter>GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="Scene01.cpp" />
-    <ClCompile Include="Scene02.cpp" />
+    <ClCompile Include="Scene01.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene02.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObject">

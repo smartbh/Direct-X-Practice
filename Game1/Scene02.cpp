@@ -49,6 +49,12 @@ void Scene02::Init()
 
 	bgmScale = 1.0f;
 	gunScale = 1.0f;
+
+	fadeOut = false;
+	fadeIn = 1.0f;
+
+	LIGHT->light.radius = 2000.0f;
+	LIGHT->light.lightColor = Color(1.0f, 1.0f, 1.0f, 0.5f);
 }
 
 void Scene02::Release()
@@ -58,6 +64,27 @@ void Scene02::Release()
 
 void Scene02::Update()
 {
+	if (ImGui::Button("1"))
+	{
+		SCENE->ChangeScene("Scene01", 1.0f);
+		fadeOut = true;
+	}
+
+	if (fadeOut)
+	{
+		LIGHT->light.lightColor.x += 0.5 * DELTA;
+		LIGHT->light.lightColor.y += 0.5 * DELTA;
+		LIGHT->light.lightColor.z += 0.5 * DELTA;
+	}
+	if (fadeIn > 0.0f)
+	{
+		LIGHT->light.lightColor.x -= 0.5 * DELTA;
+		LIGHT->light.lightColor.y -= 0.5 * DELTA;
+		LIGHT->light.lightColor.z -= 0.5 * DELTA;
+
+		fadeIn -= DELTA;
+	}
+
 	if (ImGui::SliderFloat("AppSoundScale", &app.soundScale, 0.0f, 1.0f))
 	{
 		SOUND->SetMasterVolume();

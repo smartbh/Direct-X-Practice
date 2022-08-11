@@ -57,8 +57,8 @@ void Sonic::Update()
 
 	}
 
-	col->MoveWorldPos(RIGHT * 200.0f * DELTA);
-	CAM->position += RIGHT * 200.0f * DELTA;
+	//col->MoveWorldPos(RIGHT * 200.0f * DELTA);
+	//CAM->position += RIGHT * 200.0f * DELTA;
 
 	col->MoveWorldPos(DOWN * gravity * DELTA);
 	gravity += 700.0f * DELTA;

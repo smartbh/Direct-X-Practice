@@ -29,6 +29,8 @@ private:
 	float bgmScale;
 	float gunScale;
 
+	bool fadeOut;
+	float fadeIn;
 
 public:
 	Sonic* sonic;
